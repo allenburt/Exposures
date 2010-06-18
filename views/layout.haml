@@ -7,6 +7,16 @@
     - if @keywords
       %meta{ "name" => "keywords", "content" => @keywords }
     %title= @title
+
+    %script{:type => "text/javascript", :src => "http://use.typekit.com/aqf1bmo.js"}
+    :javascript
+      try{Typekit.load();}catch(e){}
+
+    %script{ :type => "text/javascript", :src => "/js/plugins/jquery-1.4.2.js" }
+
+    %script{ :type => "text/javascript", :src => "/js/plugins/jquery.backstretch.min.js" }
+    = haml :background_image, :layout => false
+
     %link{ :href => "/css/master.css", :media => "screen", :rel => "stylesheet", :type => "text/css" }
     %link{ :href => "/articles.xml", :rel => "alternate", :type => "application/atom+xml" }
   %body{ :class => @body_class }
